@@ -2,18 +2,63 @@
   "name": "coffee-shop-website",
   "version": "1.0.0",
   "description": "Modern, responsive coffee shop website",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "type-check": "tsc --noEmit --skipLibCheck",
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "check": "npm run type-check && npm run lint",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,scss,md,mdx}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "clsx": "^2.0.0",
+    "tailwind-merge": "^2.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/react": "^18.2.45",
+    "@types/node": "^20.10.5",
+    "@types/react-dom": "^18.2.18",
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.32",
+    "autoprefixer": "^10.4.16",
+    "@tailwindcss/typography": "^0.5.10",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.0.4",
+    "prettier": "^3.1.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.2",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0"
   },
   "keywords": [
     "coffee",
     "restaurant",
     "website",
     "nextjs",
-    "react"
+    "react",
+    "typescript",
+    "tailwindcss"
   ],
   "author": "Juan Bautista Martinez",
   "license": "MIT"
