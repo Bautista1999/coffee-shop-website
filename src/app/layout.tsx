@@ -24,6 +24,31 @@ export const metadata: Metadata = {
     'coffee shop',
     'fresh roasted',
   ],
+  icons: {
+    icon: [
+      { url: '/images/logo-icon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/images/logo-icon-32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/images/icon-192.png', sizes: '192x192', type: 'image/png' },
+    ],
+  },
+  manifest: '/site.webmanifest',
+  themeColor: '#8b6f47',
+  openGraph: {
+    title: 'Coffee Shop - Premium Coffee Experience',
+    description:
+      'Your local coffee shop serving premium coffee, pastries, and creating a warm community atmosphere.',
+    images: ['/images/logo-social.png'],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Coffee Shop - Premium Coffee Experience',
+    description:
+      'Your local coffee shop serving premium coffee, pastries, and creating a warm community atmosphere.',
+    images: ['/images/logo-social.png'],
+  },
 };
 
 export default function RootLayout({
@@ -33,7 +58,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className={`${inter.variable} ${playfair.variable}`}>
-      <body className='font-sans'>{children}</body>
+      <head>
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link
+          rel='preconnect'
+          href='https://fonts.gstatic.com'
+          crossOrigin=''
+        />
+        <meta name='application-name' content='Coffee Shop' />
+        <meta name='apple-mobile-web-app-capable' content='yes' />
+        <meta name='apple-mobile-web-app-status-bar-style' content='default' />
+        <meta name='apple-mobile-web-app-title' content='Coffee Shop' />
+        <meta name='format-detection' content='telephone=no' />
+        <meta name='mobile-web-app-capable' content='yes' />
+        <meta name='msapplication-TileColor' content='#8b6f47' />
+      </head>
+      <body className='font-sans bg-coffee-50 text-coffee-800'>{children}</body>
     </html>
   );
 }
