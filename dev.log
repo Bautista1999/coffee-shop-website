@@ -1,0 +1,21 @@
+
+> coffee-shop-website@1.0.0 dev
+> next dev
+
+/home/user/coffee-shop-website/next.config.js:1
+/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  eslint: {\n    // Temporarily ignore ESLint during builds\n    ignoreDuringBuilds: true,\n  },\n  images: {\n    remotePatterns: [\n      {\n        protocol: 'https',\n        hostname: 'localhost',\n        port: '',\n        pathname: '/**',\n      },\n    ],\n    formats: ['image/webp', 'image/avif'],\n  },\n};\n\nmodule.exports = nextConfig;
+                                        ^
+
+SyntaxError: Invalid or unexpected token
+    at wrapSafe (node:internal/modules/cjs/loader:1464:18)
+    at Module._compile (node:internal/modules/cjs/loader:1495:20)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at cjsLoader (node:internal/modules/esm/translators:298:15)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:240:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:325:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:606:24)
+    at async loadConfig (/home/user/coffee-shop-website/node_modules/next/dist/server/config.js:711:36)
+
+Node.js v20.20.1

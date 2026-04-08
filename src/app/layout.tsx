@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
+import { Header } from '@/components/layout';
 import '../styles/globals.css';
 
 const inter = Inter({
@@ -73,7 +74,10 @@ export default function RootLayout({
         <meta name='mobile-web-app-capable' content='yes' />
         <meta name='msapplication-TileColor' content='#8b6f47' />
       </head>
-      <body className='font-sans bg-coffee-50 text-coffee-800'>{children}</body>
+      <body className='font-sans bg-coffee-50 text-coffee-800'>
+        <Header />
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
