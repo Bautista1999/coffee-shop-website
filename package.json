@@ -1,0 +1,20 @@
+{
+  "name": "coffee-shop-website",
+  "version": "1.0.0",
+  "description": "Modern, responsive coffee shop website",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [
+    "coffee",
+    "restaurant",
+    "website",
+    "nextjs",
+    "react"
+  ],
+  "author": "Juan Bautista Martinez",
+  "license": "MIT"
+}
